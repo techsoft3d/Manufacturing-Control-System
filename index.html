@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<meta http-equiv="X-UA-Compatible" content="chrome=1" />
+
+<head>
+  <title>Manufacturing Control System | HOOPS Web Viewer</title>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="chrome=1;IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- Google Tag Manager -->
+  <script>(function (w, d, s, l, i) {
+      w[l] = w[l] || []; w[l].push({
+        'gtm.start':
+          new Date().getTime(), event: 'gtm.js'
+      }); var f = d.getElementsByTagName(s)[0],
+        j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+          'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+    })(window, document, 'script', 'dataLayer', 'GTM-PB9P4KS');</script>
+  <!-- End Google Tag Manager -->
+
+  <link rel="stylesheet" href="stylesheets/page-layout.css" />
+  <link rel="stylesheet" href="stylesheets/hoops_web_viewer_default.css" />
+  <link rel="stylesheet" href="stylesheets/hoops_web_viewer.css" />
+  <link rel="stylesheet" href="stylesheets/LoadingBar.css" />
+  <link rel="stylesheet" href="stylesheets/bootstrap/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="stylesheets/jquery.bxslider.css" />
+  <link rel="stylesheet" href="stylesheets/custom.css" />
+  <link rel="stylesheet" href="stylesheets/TS3D_webfonts.css" />
+  <link rel="stylesheet" href="stylesheets/TS3D_logo.css" />
+
+  <script type="text/javascript"
+    src="https://cdn.jsdelivr.net/gh/techsoft3d/hoops-web-viewer@2022.2.0/hoops_web_viewer.js?v=2022.2.0"></script>
+  <script type="text/javascript"
+    src="/javascripts/communicator_scripts/communicator_server_integration.js?v=2022.2.0"></script>
+  <script type="text/javascript" src="/javascripts/communicator_scripts/sample.js?v=2022.2.0"></script>
+
+  <script type="text/javascript" src="javascripts/communicator_scripts/jquery-3.3.1.min.js"></script>
+  <script type="text/javascript" src="javascripts/jquery-ui-1.10.3.min.js"></script>
+  <script type="text/javascript" src="javascripts/jquery-ui.min.js"></script>
+  <script type="text/javascript" src="javascripts/jquery.hotkeys.js"></script>
+  <script type="text/javascript" src="javascripts/jquery.cookie.js"></script>
+  <script type="text/javascript" src="javascripts/jquery.jstree.js"></script>
+  <script type="text/javascript" src="javascripts/jquery.dialog.extra.js"></script>
+  <script type="text/javascript" src="javascripts/jquery.bxslider.min.js"></script>
+  <script type="text/javascript" src="javascripts/custom.js?v=1374a67"></script>
+  <script type="text/javascript" src="javascripts/PropertyWindowUniqueid.js?v=1374a67"></script>
+  <script type="text/javascript" src="javascripts/nameMap.js?v=1374a67"></script>
+  <script type="text/javascript" src="javascripts/uniqueid_demo.js?v=1374a67"></script>
+  <script type="text/javascript" src="javascripts/conversionService.js"></script>
+
+  <script src="nouislider/nouislider.min.js"></script>
+  <link rel="stylesheet" href="nouislider/nouislider.min.css" />
+
+  <script>
+    var viewer = null;
+    var ui = null;
+
+    function updatePrice() {
+      if ($("#priceCheckbox")) {
+        values = priceRange.noUiSlider.get();
+        minprice = values[0];
+        maxprice = values[1];
+        $("#amount").val("$" + values[0] + " - $" + values[1]);
+        $("#gradLow").text(values[0]);
+        $("#gradHigh").text(values[1]);
+        updateManData();
+      }
+    }
+
+    function updateStock() {
+      if ($("#stockCheckbox")) {
+        values = stockRange.noUiSlider.get();
+        minstock = values[0];
+        maxstock = values[1];
+        $("#stock").val(parseInt(values[0]) + " - " + parseInt(values[1]));
+        updateManData();
+      }
+    }
+  </script>
+  <script type="module">
+
+    var screenConfiguration =
+      Sample.screenConfiguration == "mobile"
+        ? Communicator.ScreenConfiguration.Mobile
+        : Communicator.ScreenConfiguration.Desktop;
+
+    viewer = await startViewer()
+
+
+    viewer.setCallbacks({
+      selection: function (selection) {
+        propertyWindow.onSelection(selection);
+      },
+      sceneReady: function () {
+        viewer
+          .getView()
+          .setBackgroundColor(
+            new Communicator.Color(235, 235, 235),
+            new Communicator.Color(179, 179, 179)
+          );
+        var camera = viewer.getView().getCamera().copy();
+        var cam_pos = new Communicator.Point3(-100, 72, 390);
+        camera.setPosition(cam_pos);
+        camera.setUp(new Communicator.Point3(0.0, 1, 0));
+        camera.setWidth(1197.2799955801056);
+        camera.setHeight(1197.2799955801056);
+        viewer.getView().setCamera(camera, 0);
+        viewer.getSelectionManager().setHighlightLineElementSelection(false);
+        viewer.getSelectionManager().setHighlightFaceElementSelection(false);
+        viewer.getSelectionManager().setSelectParentIfSelected(false);
+        viewer.getView().setAmbientOcclusionEnabled(true);
+        viewer.getView().setAmbientOcclusionRadius(0.02);
+        viewer.setClientTimeout(60, 60);
+      },
+      modelStructureReady: function () {
+        initDemo();
+        enableControls();
+      },
+    });
+
+    window.onresize = function () {
+      viewer.resizeCanvas();
+    };
+  </script>
+</head>
+
+<body>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PB9P4KS" height="0" width="0"
+      style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+  <div class="container">
+    <div class="ts3dHeader">
+      <a href="http://www.techsoft3d.com/" target="_blank">
+        <div class="ts3dLogo"></div>
+      </a>
+      <div class="ts3dLogoText">
+        <a href="http://www.techsoft3d.com/" target="_blank">
+          <span class="ts3dLogo_com_text"><span style="font-weight: bold">HOOPS</span> Communicator</span>
+        </a>
+        <span class="ts3dLogo_page_text">Manufacturing Control System</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="container" style="
+      padding-left: 15px;
+      padding-right: 13px;
+      padding-top: 0;
+      padding-bottom: 0;
+      height: 400px;
+    ">
+    <div class="row">
+      <div class="col-md-12" style="height: 400px; width: 100%">
+        <a href="http://pages.techsoft3d.com/evaluate"><button class="evaluate-now">Evaluate Now</button></a>
+        <span id="gradientLegend"><span id="gradLow">0.00</span>&nbsp;<span id="gradHigh">100</span></span>
+        <div id="theCanvas"></div>
+        <div id="redlineAnchor"></div>
+
+        <div class="col-md-offset-8 col-md-4 collapseInfo">
+          <a href="#"><img src="stylesheets/images/Expand.png" class="collapse-image" /></a>
+          <div id="collapseExample">
+            <div class="well">
+              <div>
+                <h4>Selected Part</h4>
+              </div>
+              <hr />
+              <div>
+                <p>
+                  <label for="NameOfPart">Name:</label>
+                  <input type="text" id="NameOfPart" readonly />
+                </p>
+                <p>
+                  <label for="uniqueidofpart">ID:</label>
+                  <input type="text" id="uniqueidofpart" readonly />
+                </p>
+                <p>
+                  <label for="NameOfManufacturer">Manufacturer:</label>
+                  <input type="text" id="NameOfManufacturer" readonly />
+                </p>
+                <p>
+                  <label for="Price">Price:</label>
+                  <input type="text" id="Price" readonly />
+                </p>
+                <p>
+                  <label for="InStock">Stock:</label>
+                  <input type="text" id="InStock" readonly />
+                </p>
+                <br />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- interface area -->
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <h3>Part Filter</h3>
+      </div>
+      <div class="col-md-12" id="manList">
+        <h5>Manufacturer</h5>
+        <ol id="selectable" class="manufacturers">
+          <li class="ui-widget-content man"><span>All Manufacturers</span></li>
+          <li class="ui-widget-content man">
+            <span>Manhoff Engineering</span>
+          </li>
+          <li class="ui-widget-content man"><span>Roccala Inc.</span></li>
+          <li class="ui-widget-content man">
+            <span>G&amp;M Engineering</span>
+          </li>
+          <li class="ui-widget-content man"><span>Curmudgeon</span></li>
+          <li class="ui-widget-content man"><span>Thilo Solutions</span></li>
+          <li class="ui-widget-content man"><span>Datasource</span></li>
+          <li class="ui-widget-content man"><span>Alcorn Inc.</span></li>
+          <li class="ui-widget-content man"><span>Dunlop</span></li>
+        </ol>
+      </div>
+    </div>
+  </div>
+
+  <div class="container" style="padding-bottom: 45px">
+    <div class="row" style="margin-left: 0%">
+      <span class="inventory_controls">
+        <div class="sliderTitle">
+          <h3>Price Range</h3>
+        </div>
+
+        <div class="col-md-12">
+          <span class="inventory_controls checkText">
+            <input id="priceCheckbox" type="checkbox" onclick="handlePriceRangeOnOff(this);" disabled />
+            <input type="text" id="amount" style="border: 0; color: #f6931f; font-weight: bold" disabled /><br />
+            <input id="gradientCheckbox" type="checkbox" onclick="handleGradientOnOff(this);" disabled />
+            Gradient<br /> </span><br />
+          <span class="sliders">
+            <div id="priceSlider"></div>
+          </span>
+        </div>
+      </span>
+
+      <span class="inventory_controls">
+        <div class="sliderTitle">
+          <h3>Inventory</h3>
+        </div>
+
+        <div class="col-md-12">
+          <span class="inventory_controls checkText">
+            <input id="stockCheckbox" type="checkbox" onclick="handleStockOnOff(this);" disabled />
+            <input type="text" id="stock" style="border: 0; color: #f6931f; font-weight: bold" disabled /><br />
+            <input id="outOfStockCheckbox" type="checkbox" onclick="handleoutofstockOnOff(this);" disabled />
+            Out of Stock
+          </span>
+          <span class="sliders">
+            <div id="stockSlider"></div>
+          </span><br />
+        </div>
+      </span>
+    </div>
+  </div>
+  <script>
+    var priceRange = document.getElementById("priceSlider");
+    var stockRange = document.getElementById("stockSlider");
+    noUiSlider.create(priceRange, {
+      start: [0, 100],
+      connect: true,
+      step: 0.01,
+      range: {
+        min: 0,
+        max: 100,
+      },
+    });
+
+    noUiSlider.create(stockRange, {
+      start: [0, 500],
+      connect: true,
+      step: 1,
+      range: {
+        min: 0,
+        max: 500,
+      },
+    });
+
+    // When the slider value changes, update the input and span
+    priceRange.noUiSlider.on("slide", function () {
+      updatePrice();
+    });
+
+    stockRange.noUiSlider.on("slide", function () {
+      updateStock();
+    });
+  </script>
+</body>

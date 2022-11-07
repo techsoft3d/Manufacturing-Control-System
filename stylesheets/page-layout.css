@@ -1,0 +1,949 @@
+/*! normalize.css v2.0.1 | MIT License | git.io/normalize */
+/* ==========================================================================
+   HTML5 display definitions
+   ========================================================================== */
+/*
+ * Corrects `block` display not defined in IE 8/9.
+ */
+/* line 22, ../sass/_normalize.scss */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+nav,
+section,
+summary,
+main {
+  display: block; }
+
+/*
+ * Corrects `inline-block` display not defined in IE 8/9.
+ */
+/* line 32, ../sass/_normalize.scss */
+audio,
+canvas,
+video {
+  display: inline-block; }
+
+/*
+ * Prevents modern browsers from displaying `audio` without controls.
+ * Remove excess height in iOS 5 devices.
+ */
+/* line 41, ../sass/_normalize.scss */
+audio:not([controls]) {
+  display: none;
+  height: 0; }
+
+/*
+ * Addresses styling for `hidden` attribute not present in IE 8/9.
+ */
+/* line 50, ../sass/_normalize.scss */
+[hidden] {
+  display: none; }
+
+/* ==========================================================================
+   Base
+   ========================================================================== */
+/*
+ * 1. Sets default font family to sans-serif.
+ * 2. Prevents iOS text size adjust after orientation change, without disabling
+ *    user zoom.
+ */
+/* line 64, ../sass/_normalize.scss */
+html {
+  font-family: sans-serif;
+  /* 1 */
+  -webkit-text-size-adjust: 100%;
+  /* 2 */
+  -ms-text-size-adjust: 100%;
+  /* 2 */ }
+
+/*
+ * Removes default margin.
+ */
+/* line 74, ../sass/_normalize.scss */
+body {
+  margin: 0; }
+
+/* ==========================================================================
+   Links
+   ========================================================================== */
+/*
+ * Addresses `outline` inconsistency between Chrome and other browsers.
+ */
+/* line 86, ../sass/_normalize.scss */
+a:focus {
+  outline: thin dotted; }
+
+/*
+ * Improves readability when focused and also mouse hovered in all browsers.
+ */
+/* line 95, ../sass/_normalize.scss */
+a:active,
+a:hover {
+  outline: 0; }
+
+/* ==========================================================================
+   Typography
+   ========================================================================== */
+/*
+ * Addresses `h1` font sizes within `section` and `article` in Firefox 4+,
+ * Safari 5, and Chrome.
+ */
+/* line 108, ../sass/_normalize.scss */
+h1 {
+  font-size: 2em; }
+
+/*
+ * Addresses styling not present in IE 8/9, Safari 5, and Chrome.
+ */
+/* line 116, ../sass/_normalize.scss */
+abbr[title] {
+  border-bottom: 1px dotted; }
+
+/*
+ * Addresses style set to `bolder` in Firefox 4+, Safari 5, and Chrome.
+ */
+/* line 125, ../sass/_normalize.scss */
+b,
+strong {
+  font-weight: bold; }
+
+/*
+ * Addresses styling not present in Safari 5 and Chrome.
+ */
+/* line 133, ../sass/_normalize.scss */
+dfn {
+  font-style: italic; }
+
+/*
+ * Addresses styling not present in IE 8/9.
+ */
+/* line 141, ../sass/_normalize.scss */
+mark {
+  background: #ff0;
+  color: #000; }
+
+/*
+ * Corrects font family set oddly in Safari 5 and Chrome.
+ */
+/* line 154, ../sass/_normalize.scss */
+code,
+kbd,
+pre,
+samp {
+  font-family: monospace, serif;
+  font-size: 1em; }
+
+/*
+ * Improves readability of pre-formatted text in all browsers.
+ */
+/* line 163, ../sass/_normalize.scss */
+pre {
+  white-space: pre;
+  white-space: pre-wrap;
+  word-wrap: break-word; }
+
+/*
+ * Sets consistent quote types.
+ */
+/* line 173, ../sass/_normalize.scss */
+q {
+  quotes: "\201C" "\201D" "\2018" "\2019"; }
+
+/*
+ * Addresses inconsistent and variable font size in all browsers.
+ */
+/* line 181, ../sass/_normalize.scss */
+small {
+  font-size: 80%; }
+
+/*
+ * Prevents `sub` and `sup` affecting `line-height` in all browsers.
+ */
+/* line 190, ../sass/_normalize.scss */
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline; }
+
+/* line 197, ../sass/_normalize.scss */
+sup {
+  top: -0.5em; }
+
+/* line 201, ../sass/_normalize.scss */
+sub {
+  bottom: -0.25em; }
+
+/* ==========================================================================
+   Embedded content
+   ========================================================================== */
+/*
+ * Removes border when inside `a` element in IE 8/9.
+ */
+/* line 213, ../sass/_normalize.scss */
+img {
+  border: 0; }
+
+/*
+ * Corrects overflow displayed oddly in IE 9.
+ */
+/* line 221, ../sass/_normalize.scss */
+svg:not(:root) {
+  overflow: hidden; }
+
+/* ==========================================================================
+   Figures
+   ========================================================================== */
+/*
+ * Addresses margin not present in IE 8/9 and Safari 5.
+ */
+/* line 233, ../sass/_normalize.scss */
+figure {
+  margin: 0; }
+
+/* ==========================================================================
+   Forms
+   ========================================================================== */
+/*
+ * Define consistent border, margin, and padding.
+ */
+/* line 245, ../sass/_normalize.scss */
+fieldset {
+  border: 1px solid #c0c0c0;
+  margin: 0 2px;
+  padding: 0.35em 0.625em 0.75em; }
+
+/*
+ * 1. Corrects color not being inherited in IE 8/9.
+ * 2. Remove padding so people aren't caught out if they zero out fieldsets.
+ */
+/* line 256, ../sass/_normalize.scss */
+legend {
+  border: 0;
+  /* 1 */
+  padding: 0;
+  /* 2 */ }
+
+/*
+ * 1. Corrects font family not being inherited in all browsers.
+ * 2. Corrects font size not being inherited in all browsers.
+ * 3. Addresses margins set differently in Firefox 4+, Safari 5, and Chrome
+ */
+/* line 270, ../sass/_normalize.scss */
+button,
+input,
+select,
+textarea {
+  font-family: inherit;
+  /* 1 */
+  font-size: 100%;
+  /* 2 */
+  margin: 0;
+  /* 3 */ }
+
+/*
+ * Addresses Firefox 4+ setting `line-height` on `input` using `!important` in
+ * the UA stylesheet.
+ */
+/* line 282, ../sass/_normalize.scss */
+button,
+input {
+  line-height: normal; }
+
+/*
+ * 1. Avoid the WebKit bug in Android 4.0.* where (2) destroys native `audio`
+ *    and `video` controls.
+ * 2. Corrects inability to style clickable `input` types in iOS.
+ * 3. Improves usability and consistency of cursor style between image-type
+ *    `input` and others.
+ */
+/* line 297, ../sass/_normalize.scss */
+button,
+html input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+  -webkit-appearance: button;
+  /* 2 */
+  cursor: pointer;
+  /* 3 */ }
+
+/*
+ * Re-set default cursor for disabled elements.
+ */
+/* line 307, ../sass/_normalize.scss */
+button[disabled],
+input[disabled] {
+  cursor: default; }
+
+/*
+ * 1. Addresses box sizing set to `content-box` in IE 8/9.
+ * 2. Removes excess padding in IE 8/9.
+ */
+/* line 317, ../sass/_normalize.scss */
+input[type="checkbox"],
+input[type="radio"] {
+  box-sizing: border-box;
+  /* 1 */
+  padding: 0;
+  /* 2 */ }
+
+/*
+ * 1. Addresses `appearance` set to `searchfield` in Safari 5 and Chrome.
+ * 2. Addresses `box-sizing` set to `border-box` in Safari 5 and Chrome
+ *    (include `-moz` to future-proof).
+ */
+/* line 328, ../sass/_normalize.scss */
+input[type="search"] {
+  -webkit-appearance: textfield;
+  /* 1 */
+  -moz-box-sizing: content-box;
+  -webkit-box-sizing: content-box;
+  /* 2 */
+  box-sizing: content-box; }
+
+/*
+ * Removes inner padding and search cancel button in Safari 5 and Chrome
+ * on OS X.
+ */
+/* line 341, ../sass/_normalize.scss */
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none; }
+
+/*
+ * Removes inner padding and border in Firefox 4+.
+ */
+/* line 350, ../sass/_normalize.scss */
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+  border: 0;
+  padding: 0; }
+
+/*
+ * 1. Removes default vertical scrollbar in IE 8/9.
+ * 2. Improves readability and alignment in all browsers.
+ */
+/* line 360, ../sass/_normalize.scss */
+textarea {
+  overflow: auto;
+  /* 1 */
+  vertical-align: top;
+  /* 2 */ }
+
+/* ==========================================================================
+   Tables
+   ========================================================================== */
+/*
+ * Remove most spacing between table cells.
+ */
+/* line 373, ../sass/_normalize.scss */
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+/* line 13, ../sass/_base.scss */
+html {
+  font-size: 62.5%; }
+
+/* line 16, ../sass/_base.scss */
+body {
+  color: #211f1e;
+  line-height: 1.4;
+  font-family: helvetica, arial, sans-serif;
+  font-size: 14px;
+  font-size: 1.4rem; }
+
+/* line 23, ../sass/_base.scss */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: normal;
+  color: #211f1e;
+  margin: 0 0 10px 0; }
+
+/* line 28, ../sass/_base.scss */
+h1 {
+  font-size: 18px;
+  font-size: 1.8rem; }
+
+/* line 31, ../sass/_base.scss */
+h2 {
+  font-size: 18px;
+  font-size: 1.8rem;
+  font-weight: bold; }
+
+/* line 35, ../sass/_base.scss */
+h3 {
+  font-size: 16px;
+  font-size: 1.6rem;
+  font-weight: bold; }
+
+/* line 45, ../sass/_base.scss */
+h6 {
+  font-size: 16px;
+  font-size: 1.6rem; }
+
+/* line 57, ../sass/_base.scss */
+p, ul, ol, hr, table, form, fieldset {
+  margin-bottom: 20px; }
+
+/* line 78, ../sass/_base.scss */
+a {
+  color: #be2428; }
+  /* line 18, ../../../../CodeKit.app/Contents/Resources/engines/compass/frameworks/compass/stylesheets/compass/typography/links/_link-colors.scss */
+  a:visited {
+    color: #be2428; }
+  /* line 21, ../../../../CodeKit.app/Contents/Resources/engines/compass/frameworks/compass/stylesheets/compass/typography/links/_link-colors.scss */
+  a:focus {
+    color: #fcb415; }
+  /* line 24, ../../../../CodeKit.app/Contents/Resources/engines/compass/frameworks/compass/stylesheets/compass/typography/links/_link-colors.scss */
+  a:hover {
+    color: #fcb415; }
+  /* line 27, ../../../../CodeKit.app/Contents/Resources/engines/compass/frameworks/compass/stylesheets/compass/typography/links/_link-colors.scss */
+  a:active {
+    color: #fcb415; }
+
+/* line 86, ../sass/_base.scss */
+label {
+  cursor: pointer; }
+
+/* line 9, ../sass/_layout.scss */
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box; }
+
+/* line 13, ../sass/_layout.scss */
+.width {
+  position: relative;
+  width: 1170px;
+  margin: 0 auto; }
+
+/* line 18, ../sass/_layout.scss */
+header[role="banner"] {
+  background: black;
+  border-bottom: 3px solid #be2428;
+  margin-bottom: 20px; }
+
+/* line 24, ../sass/_layout.scss */
+.workflow {
+  display: block; }
+
+/* line 29, ../sass/_layout.scss */
+.main-container {
+  padding: 20px;
+  background: whitesmoke; }
+
+/* line 35, ../sass/_layout.scss */
+.view-column {
+  width: 605px;
+  display: inline-block;
+  vertical-align: top;
+  margin-right: 20px; }
+
+/* line 42, ../sass/_layout.scss */
+.right-column {
+  width: 500px;
+  display: inline-block;
+  vertical-align: top; }
+
+/* line 49, ../sass/_layout.scss */
+.object-values-column,
+.options-column {
+  width: 270px;
+  display: inline-block;
+  vertical-align: top; }
+
+/* line 55, ../sass/_layout.scss */
+.object-values-column {
+  margin-right: 20px; }
+
+/* line 59, ../sass/_layout.scss */
+footer {
+  background: #2d2d2d;
+  border-top: 3px solid #be2428;
+  padding: 20px 0 1px 0;
+  color: white; }
+
+#mode-selection {
+    width:341px;
+    float:right;
+    height:auto;
+}
+
+/* line 12, ../sass/_modules.scss */
+header .width {
+  *zoom: 1; }
+  /* line 38, ../../../../CodeKit.app/Contents/Resources/engines/compass/frameworks/compass/stylesheets/compass/utilities/general/_clearfix.scss */
+  header .width:after {
+    content: "";
+    display: table;
+    clear: both; }
+  /* line 15, ../sass/_modules.scss */
+  header .width .logo {
+    float: left;
+    width: 227px;
+    margin-right: 20px; }
+  /* line 21, ../sass/_modules.scss */
+  header .width h1 {
+    float: left;
+    width: 923px;
+    color: white;
+    margin: 43px 0 0 0;
+    text-align: right; }
+
+/* line 35, ../sass/_modules.scss */
+section[role="region"] .main-container .view-column .view {
+  width: 100%;
+  height: 515px;
+  border: 1px solid #989494;
+  background: white;
+  position: relative; }
+/* line 42, ../sass/_modules.scss */
+section[role="region"] .main-container .view-column .view-controls {
+  background: #a7a7a7;
+  text-align: center;
+  padding: 5px;
+  margin: 20px 0; }
+  /* line 48, ../sass/_modules.scss */
+  section[role="region"] .main-container .view-column .view-controls a {
+    background-image: url("../img/icons-default.png");
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    text-indent: -9999px;
+    border: 4px solid #a7a7a7;
+    margin: 0 5px; }
+    /* line 57, ../sass/_modules.scss */
+    section[role="region"] .main-container .view-column .view-controls a:hover, section[role="region"] .main-container .view-column .view-controls a:focus {
+      background-image: url("../img/icons-hover.png"); }
+    /* line 61, ../sass/_modules.scss */
+    section[role="region"] .main-container .view-column .view-controls a.active {
+      background-image: url("../img/icons-active.png");
+      border: 4px solid #e0e0e0; }
+    /* line 66, ../sass/_modules.scss */
+    section[role="region"] .main-container .view-column .view-controls a.view-01 {
+      background-position: -242px -3px; }
+    /* line 70, ../sass/_modules.scss */
+    section[role="region"] .main-container .view-column .view-controls a.view-02 {
+      background-position: -200px -83px; }
+    /* line 74, ../sass/_modules.scss */
+    section[role="region"] .main-container .view-column .view-controls a.view-03 {
+      background-position: -124px -44px; }
+    /* line 78, ../sass/_modules.scss */
+    section[role="region"] .main-container .view-column .view-controls a.view-04 {
+      background-position: -242px -43px; }
+    /* line 82, ../sass/_modules.scss */
+    section[role="region"] .main-container .view-column .view-controls a.view-05 {
+      background-position: -121px -82px; }
+/* line 89, ../sass/_modules.scss */
+section[role="region"] .main-container .view-column .view-options a {
+  width: 94px;
+  margin-right: 10px;
+  display: inline-block;
+  vertical-align: top;
+  text-align: center;
+  background: white;
+  padding: 15px 5px 10px 5px;
+  text-decoration: none; }
+  /* line 99, ../sass/_modules.scss */
+  section[role="region"] .main-container .view-column .view-options a:nth-of-type(5n) {
+    margin-right: 0; }
+  /* line 103, ../sass/_modules.scss */
+  section[role="region"] .main-container .view-column .view-options a:hover, section[role="region"] .main-container .view-column .view-options a:focus {
+    -webkit-box-shadow: #c8c8c8 0 0 10px 0 inset;
+    -moz-box-shadow: #c8c8c8 0 0 10px 0 inset;
+    box-shadow: #c8c8c8 0 0 10px 0 inset; }
+  /* line 107, ../sass/_modules.scss */
+  section[role="region"] .main-container .view-column .view-options a span {
+    display: block;
+    margin-top: 5px; }
+/* line 117, ../sass/_modules.scss */
+section[role="region"] .main-container .object-values-column .object-info {
+  background: white;
+  padding: 10px;
+  margin-bottom: 20px; }
+/* line 123, ../sass/_modules.scss */
+section[role="region"] .main-container .object-values-column .object-values {
+  background: white;
+  padding: 10px;
+  margin-bottom: 20px; }
+/* line 132, ../sass/_modules.scss */
+section[role="region"] .options-column .buttons {
+  background: white;
+  padding: 10px;
+  margin-bottom: 20px; }
+  /* line 137, ../sass/_modules.scss */
+  section[role="region"] .options-column .buttons .button {
+    margin-bottom: 10px; }
+    /* line 140, ../sass/_modules.scss */
+    section[role="region"] .options-column .buttons .button:last-of-type {
+      margin-bottom: 0; }
+/* line 146, ../sass/_modules.scss */
+section[role="region"] .options-column .options {
+  background: white;
+  padding: 10px;
+  margin-bottom: 20px; }
+/* line 152, ../sass/_modules.scss */
+section[role="region"] .options-column .cart {
+  background: white;
+  border: 1px solid #989494;
+  padding: 10px;
+  text-align: center; }
+  /* line 158, ../sass/_modules.scss */
+  section[role="region"] .options-column .cart h2 {
+    margin-bottom: 10px; }
+  /* line 162, ../sass/_modules.scss */
+  section[role="region"] .options-column .cart .output-price {
+    margin: 20px 0;
+    display: block;
+    font-weight: bold; }
+
+/* line 172, ../sass/_modules.scss */
+form.basket label {
+  display: block;
+  margin-bottom: 10px; }
+  /* line 176, ../sass/_modules.scss */
+  form.basket label.divider {
+    padding-bottom: 10px;
+    border-bottom: 1px solid #c8c8c8; }
+/* line 182, ../sass/_modules.scss */
+form.basket input[type="number"] {
+  width: 60px;
+  padding: 3px; }
+/* line 187, ../sass/_modules.scss */
+form.basket input[type="range"] {
+  width: 100%;
+  padding: 5px 0; }
+/* line 192, ../sass/_modules.scss */
+form.basket p.quality-labels {
+  margin: 0;
+  *zoom: 1; }
+  /* line 38, ../../../../CodeKit.app/Contents/Resources/engines/compass/frameworks/compass/stylesheets/compass/utilities/general/_clearfix.scss */
+  form.basket p.quality-labels:after {
+    content: "";
+    display: table;
+    clear: both; }
+  /* line 196, ../sass/_modules.scss */
+  form.basket p.quality-labels span {
+    color: #c8c8c8;
+    float: left;
+    font-size: 12px;
+    font-size: 1.2rem; }
+    /* line 201, ../sass/_modules.scss */
+    form.basket p.quality-labels span.medium {
+      margin-left: 79px; }
+    /* line 205, ../sass/_modules.scss */
+    form.basket p.quality-labels span.high {
+      float: right; }
+/* line 211, ../sass/_modules.scss */
+form.basket a.update {
+  margin-top: 20px; }
+/* line 215, ../sass/_modules.scss */
+form.basket select {
+  width: 100%;
+  padding: 3px; }
+/* line 220, ../sass/_modules.scss */
+form.basket input[type="submit"] {
+  border: 0;
+  width: 100%;
+  display: block;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  border-radius: 5px;
+  background: #be2428;
+  text-align: center;
+  color: white;
+  padding: 10px;
+  text-decoration: none; }
+  /* line 231, ../sass/_modules.scss */
+  form.basket input[type="submit"]:hover, form.basket input[type="submit"]:focus {
+    background: #fcb415; }
+
+/* line 238, ../sass/_modules.scss */
+a.button {
+  display: block;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  border-radius: 5px;
+  background: #be2428;
+  text-align: center;
+  color: white;
+  padding: 10px;
+  text-decoration: none; }
+  /* line 247, ../sass/_modules.scss */
+  a.button:hover, a.button:focus {
+    background: #fcb415; }
+
+/* line 254, ../sass/_modules.scss */
+footer .column {
+  width: 214px;
+  margin-right: 20px;
+  display: inline-block;
+  vertical-align: top; }
+  /* line 260, ../sass/_modules.scss */
+  footer .column:nth-of-type(5n) {
+    margin-right: 0; }
+  /* line 265, ../sass/_modules.scss */
+  footer .column h6 {
+    color: white; }
+  /* line 269, ../sass/_modules.scss */
+  footer .column ul {
+    list-style: none;
+    padding: 0; }
+    /* line 273, ../sass/_modules.scss */
+    footer .column ul a {
+      color: #989494;
+      text-decoration: none; }
+      /* line 18, ../../../../CodeKit.app/Contents/Resources/engines/compass/frameworks/compass/stylesheets/compass/typography/links/_link-colors.scss */
+      footer .column ul a:visited {
+        color: #989494; }
+      /* line 21, ../../../../CodeKit.app/Contents/Resources/engines/compass/frameworks/compass/stylesheets/compass/typography/links/_link-colors.scss */
+      footer .column ul a:focus {
+        color: #fcb415; }
+      /* line 24, ../../../../CodeKit.app/Contents/Resources/engines/compass/frameworks/compass/stylesheets/compass/typography/links/_link-colors.scss */
+      footer .column ul a:hover {
+        color: #fcb415; }
+      /* line 27, ../../../../CodeKit.app/Contents/Resources/engines/compass/frameworks/compass/stylesheets/compass/typography/links/_link-colors.scss */
+      footer .column ul a:active {
+        color: #fcb415; }
+/* line 280, ../sass/_modules.scss */
+footer .copyright {
+  color: #989494; }
+
+
+
+
+/* NEW STYLES */
+#feedback { font-size: 1.4em; }
+
+.manufacturer {
+  background: white;
+  padding: 10px;
+  margin-bottom: 20px; }
+
+#selectable {
+  list-style-type: none;
+  margin: 0;
+  padding: 0; }
+
+#selectable:after {
+  content: "";
+  display: table;
+  clear: both; }
+
+#selectable li {
+  margin: 3px;
+  background: #ccc; }
+
+#selectable li {
+  margin: 0 3px 3px 0;
+  padding: 3px;
+  width: 117px;
+  float: left;
+  height: 75px;
+  text-align: center;
+  cursor: pointer;
+  display: table; }
+
+#selectable li span {
+  text-align: center;
+  display: table-cell;
+  vertical-align: middle; }
+
+#selectable .ui-selecting {
+  background: transparent; }
+
+#selectable .ui-selected {
+  background: #F39814;
+  color: white; }
+
+.pricepanel-outer {
+  float: right;
+  background: white;
+  width: 240px;
+  padding: 10px;
+  margin-bottom: 20px; }
+
+.stockpanel-outer {
+  float: right;
+  background: white;
+  width: 240px;
+  padding: 10px;
+  margin-bottom: 20px; }
+
+.selected-part {
+  background: white;
+  padding: 10px;
+  position: relative;
+  cursor:pointer;
+  margin-bottom: 20px;
+  width: 240px;
+  float: left; }
+
+.manufacturers-products-outer {
+  clear: both;
+  background: white;
+  padding: 10px; }
+
+table.manufacturers-products {
+  margin-bottom: 0;
+}
+
+table.manufacturers-products thead {
+  border-bottom: 3px solid #ccc;
+}
+
+table.manufacturers-products th,
+table.manufacturers-products td {
+  padding: 5px;
+  text-align: center;
+}
+
+ul.toggle {
+    list-style: none;
+    height: 43px;
+    position: relative;
+    margin: 4px 0 0 0;
+    padding: 0;
+}
+
+ul.toggle li {
+    float: left;
+}
+
+ul.toggle li a {
+    text-decoration: none;
+    color: #888;
+    padding: 4px 14px;
+    background: #E5E5E5;
+    background: rgb(243,243,243); /* Old browsers */
+    /* IE9 SVG, needs conditional override of 'filter' to 'none' */
+    background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2YzZjNmMyIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNlNWU1ZTUiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+    background: -moz-linear-gradient(top,  rgba(243,243,243,1) 0%, rgba(229,229,229,1) 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(243,243,243,1)), color-stop(100%,rgba(229,229,229,1))); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  rgba(243,243,243,1) 0%,rgba(229,229,229,1) 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  rgba(243,243,243,1) 0%,rgba(229,229,229,1) 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  rgba(243,243,243,1) 0%,rgba(229,229,229,1) 100%); /* IE10+ */
+    background: linear-gradient(to bottom,  rgba(243,243,243,1) 0%,rgba(229,229,229,1) 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f3f3f3', endColorstr='#e5e5e5',GradientType=0 ); /* IE6-8 */
+    text-shadow: 0 1px 0 #FFF;
+    border-left: 1px solid #D5D5D5;
+    border-top: 1px solid #D5D5D5;
+    border-bottom: 1px solid #D5D5D5;
+    -webkit-box-shadow: 0 1px 0 #FFF inset, 0 0 5px rgba(0, 0, 0, .1) inset, 0 1px 1px rgba(0, 0, 0, .3);
+    -moz-box-shadow: 0 1px 0 #FFF inset, 0 0 5px rgba(0, 0, 0, .1) inset, 0 1px 1px rgba(0, 0, 0, .3);
+    box-shadow: 0 1px 0 #FFF inset, 0 0 5px rgba(0, 0, 0, .1) inset, 0 1px 1px rgba(0, 0, 0, .3);
+}
+
+ul.toggle li:first-child a {
+    -webkit-border-radius: 5px 0 0 5px;
+    -moz-border-radius: 5px 0 0 5px;
+    border-radius: 5px 0 0 5px;
+}
+ul.toggle li:last-child a {
+    -webkit-border-radius: 0 5px 5px 0;
+    -moz-border-radius: 0 5px 5px 0;
+    border-radius: 0 5px 5px 0;
+}
+
+ul.toggle li a.on {
+    background: #505050;
+    color: #f4f4f4;
+    background: rgb(119,119,119); /* Old browsers */
+    /* IE9 SVG, needs conditional override of 'filter' to 'none' */
+    background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzc3Nzc3NyIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiM1MDUwNTAiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+    background: -moz-linear-gradient(top,  rgba(119,119,119,1) 0%, rgba(80,80,80,1) 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(119,119,119,1)), color-stop(100%,rgba(80,80,80,1))); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  rgba(119,119,119,1) 0%,rgba(80,80,80,1) 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  rgba(119,119,119,1) 0%,rgba(80,80,80,1) 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  rgba(119,119,119,1) 0%,rgba(80,80,80,1) 100%); /* IE10+ */
+    background: linear-gradient(to bottom,  rgba(119,119,119,1) 0%,rgba(80,80,80,1) 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#777777', endColorstr='#505050',GradientType=0 ); /* IE6-8 */
+    text-shadow: 0 -1px 0 #444, 0 0 5px #222;
+    border-right: 1px solid #444;
+    border-top: 1px solid #444;
+    border-bottom: 1px solid #444;
+    -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, .7) inset, 0 1px 0 #444;
+    -moz-box-shadow: 0 1px 2px rgba(0, 0, 0, .7) inset, 0 1px 0 #444;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, .7) inset, 0 1px 0 #444;
+}
+
+.selected-part p {
+  margin: 0 0 20px 0;
+}
+
+.selected-part p:last-of-type {
+  margin: 0 0 10px 0;
+}
+
+.selected-part input {
+  border: 0;
+  font-weight: bold;
+  background: transparent;
+  width: 125px;
+}
+
+.selected-part input#NameOfPart {
+  width: 170px;
+}
+
+.selected-part input#uniqueidofpart {
+  width: 195px;
+}
+
+.selected-part input#NameOfManufacturer {
+  width: 125px;
+}
+
+.selected-part input#Price {
+  width: 175px;
+}
+
+.selected-part input#InStock {
+  width: 170px;
+}
+
+#pricepanel {
+  opacity: 0.5;
+  background: rgb(215,215,215);
+  position: relative;
+  width: 220px;
+  padding: 10px;
+  height: 90px;
+  cursor: pointer; }
+
+#pricepanel.active {
+  opacity: 1.0; }
+
+#pricepanel.active .ui-widget-header {
+  background: blue; }
+
+#stockpanel {
+  opacity: 0.5;
+  background: rgb(215,215,215);
+  position: relative;
+  width: 220px;
+  padding: 10px;
+  height: 90px;
+  cursor: pointer; }
+
+#stockpanel.active {
+  opacity: 1.0; }
+
+#theCanvas {
+position: absolute;
+top: 0;
+left: 0;
+width:603px;
+height: 514px;
+}

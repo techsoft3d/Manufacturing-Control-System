@@ -1,0 +1,19 @@
+#progressdiv {
+    position: absolute; 
+    margin: auto; 
+    width: 500px; 
+    top: 50%; 
+    height:30px;
+    border-style:solid;
+    border-color:rgb(200,200,200);
+    border-width:1px;
+	left: calc(50% - 250px)    
+}
+
+  .progress-label {
+    position: absolute;
+    left: 50%;
+    top: 2px;
+    font-weight: bold;
+    text-shadow: 1px 1px 0 #fff;
+  }

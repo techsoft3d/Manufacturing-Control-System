@@ -1,0 +1,82 @@
+
+
+textarea
+{
+    resize: none;
+}
+
+.no-close .ui-dialog-titlebar-close
+{
+    display: none
+}
+
+.redline-stroke
+{
+    outline-width: 2px;
+    outline-color: red;
+    outline-style: solid;
+}
+
+.redline-thick-stroke
+{
+    outline-width: 4px;
+}
+
+.redline-text
+{
+    user-select: none;
+    pointer-events: none;    
+}
+
+.redline-text textarea 
+{
+    font-family: Arial;
+    font-size: 12px;
+    background: white;
+    border: none;
+    margin: 0;
+    width: 100%;
+    height: 100%;        
+}
+
+.redline-text .ui-resizable-handle
+{
+    pointer-events: all;
+}
+
+.no-user-or-pointer
+{
+    user-select: auto;
+    pointer-events: auto;
+}
+
+.webviewer-canvas:focus{
+    outline: 0;
+}
+    
+.helpwindowstyle  
+{
+    width: 500px; height: 435px; top: 5px; right: 10px; z-index: 1;
+	position: absolute;
+	background: rgba(100,100,100,0.8);
+	border: 1px solid black;
+	background:rgba(255,255,255,0.8);
+
+    border-radius:6px;   	             
+    border-style:solid;	             
+	cursor:move;
+
+}
+
+[rel=directory] > a > .jstree-checkbox 
+{ 
+    display:none
+}
+
+[rel=disabled] .jstree-checkbox 
+{
+    pointer-events: none;    	
+    opacity: 0.3; 
+}​
+
+ 
