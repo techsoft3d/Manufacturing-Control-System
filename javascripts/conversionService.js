@@ -26,7 +26,7 @@ async function startViewer() {
                 containerId: "theCanvas",
                 endpointUri: endpointUriBeginning + data.serverurl + ":" + data.port + '?token=' + data.sessionid,
                 model: "moto",
-                enginePath: "https://cdn.jsdelivr.net/gh/techsoft3d/hoops-web-viewer@latest",
+                enginePath: "https://cdn.jsdelivr.net/gh/techsoft3d/hoops-web-viewer",
                 rendererType: 0
         });
 
