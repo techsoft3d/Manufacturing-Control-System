@@ -27,12 +27,8 @@
   <link rel="stylesheet" href="stylesheets/custom.css" />
   <link rel="stylesheet" href="stylesheets/TS3D_webfonts.css" />
   <link rel="stylesheet" href="stylesheets/TS3D_logo.css" />
+  <link rel="stylesheet" href="nouislider/nouislider.min.css" />
 
-  <script type="text/javascript"
-    src="https://cdn.jsdelivr.net/gh/techsoft3d/hoops-web-viewer/hoops_web_viewer.js"></script>
-  <script type="text/javascript"
-    src="javascripts/communicator_scripts/communicator_server_integration.js?v=latest"></script>
-  <script type="text/javascript" src="javascripts/communicator_scripts/sample.js?v=latest"></script>
 
   <script type="text/javascript" src="javascripts/communicator_scripts/jquery-3.3.1.min.js"></script>
   <script type="text/javascript" src="javascripts/jquery-ui-1.10.3.min.js"></script>
@@ -47,9 +43,19 @@
   <script type="text/javascript" src="javascripts/nameMap.js?v=1374a67"></script>
   <script type="text/javascript" src="javascripts/uniqueid_demo.js?v=1374a67"></script>
   <script type="text/javascript" src="javascripts/conversionService.js"></script>
+  <script type="text/javascript" src="javascripts/common/load_scripts.js"></script>
 
   <script src="nouislider/nouislider.min.js"></script>
-  <link rel="stylesheet" href="nouislider/nouislider.min.css" />
+
+
+  <script type="module">
+    await loadDynamicScript()
+    await loadIndividualScript("javascripts/communicator_scripts/web_viewer_ui.js")
+    await loadIndividualScript("javascripts/communicator_scripts/communicator_server_integration.js?v=latest")
+    await loadIndividualScript("javascripts/communicator_scripts/sample.js?v=latest")
+    initializeViewer()
+
+  </script>
 
   <script>
     var viewer = null;
@@ -77,51 +83,7 @@
       }
     }
   </script>
-  <script type="module">
 
-    var screenConfiguration =
-      Sample.screenConfiguration == "mobile"
-        ? Communicator.ScreenConfiguration.Mobile
-        : Communicator.ScreenConfiguration.Desktop;
-
-    viewer = await startViewer()
-
-
-    viewer.setCallbacks({
-      selection: function (selection) {
-        propertyWindow.onSelection(selection);
-      },
-      sceneReady: function () {
-        viewer
-          .getView()
-          .setBackgroundColor(
-            new Communicator.Color(235, 235, 235),
-            new Communicator.Color(179, 179, 179)
-          );
-        var camera = viewer.getView().getCamera().copy();
-        var cam_pos = new Communicator.Point3(-100, 72, 390);
-        camera.setPosition(cam_pos);
-        camera.setUp(new Communicator.Point3(0.0, 1, 0));
-        camera.setWidth(1197.2799955801056);
-        camera.setHeight(1197.2799955801056);
-        viewer.getView().setCamera(camera, 0);
-        viewer.getSelectionManager().setHighlightLineElementSelection(false);
-        viewer.getSelectionManager().setHighlightFaceElementSelection(false);
-        viewer.getSelectionManager().setSelectParentIfSelected(false);
-        viewer.getView().setAmbientOcclusionEnabled(true);
-        viewer.getView().setAmbientOcclusionRadius(0.02);
-        viewer.setClientTimeout(60, 60);
-      },
-      modelStructureReady: function () {
-        initDemo();
-        enableControls();
-      },
-    });
-
-    window.onresize = function () {
-      viewer.resizeCanvas();
-    };
-  </script>
 </head>
 
 <body>
