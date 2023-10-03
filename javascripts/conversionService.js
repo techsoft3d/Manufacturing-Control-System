@@ -1,30 +1,15 @@
 modelUIDs = [
-        "a35ee3a0-62ba-43bf-a449-fd563ee3b737" //moto
+        "4709d28e-db9e-4cdc-9ee8-18e0db5615c6" //moto
 ]
 
 async function startViewer() {
-        const conversionServiceURI = "https://csapi.techsoft3d.com";
-
         var viewer;
-
-        let res = await fetch(conversionServiceURI + '/api/streamingSession');
-        var data = await res.json();
-
-        var endpointUriBeginning = 'ws://';
-
-        if(conversionServiceURI.substring(0, 5).includes("https")){
-                endpointUriBeginning = 'wss://'
-        }
-
-        await fetch(conversionServiceURI + '/api/enableStreamAccess/' + data.sessionid, { method: 'put', headers: { 'items': JSON.stringify(modelUIDs) } });
-
-       
-        await fetch(conversionServiceURI + '/api/enableStreamAccess/' +  data.sessionid, { method: 'put', headers: { 'CS-API-Arg': JSON.stringify({subDirectory:"moto_parts" }), 'items': JSON.stringify(["0f248a5d-2366-44e3-9c48-2b64b7264d2e"]) } });
-   
-     
+        let sessioninfo = await caasClient.getStreamingSession();
+        await caasClient.enableStreamAccess(sessioninfo.sessionid, modelUIDs);
+        
         viewer = new Communicator.WebViewer({
                 containerId: "theCanvas",
-                endpointUri: endpointUriBeginning + data.serverurl + ":" + data.port + '?token=' + data.sessionid,
+                endpointUri: sessioninfo.endpointUri,
                 model: "moto",
                 enginePath: "https://cdn.jsdelivr.net/gh/techsoft3d/hoops-web-viewer",
                 rendererType: 0
@@ -37,14 +22,9 @@ async function startViewer() {
 }
 
 async function fetchVersionNumber() {
-        const conversionServiceURI = "https://csapi.techsoft3d.com";
-
-        let res = await fetch(conversionServiceURI + '/api/hcVersion');
-        var data = await res.json();
-        versionNumer = data;
-        
-        return data
-
+  let data = await caasClient.getHCVersion();
+  versionNumer = data;        
+  return data
 }
 
 async function initializeViewer() {
