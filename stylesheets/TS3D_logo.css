@@ -2,7 +2,7 @@
   width: 53px;
   height: 50px;
   display: inline-block;
-  background-image: url('./images/TechSoft_3D_Logo_sm.png');
+  background-image: url('./images/bug.png');
   background-repeat: no-repeat;
   vertical-align: middle;
   background-size: contain;
@@ -57,7 +57,7 @@
 
 @media screen and (min-width: 768px) {
   .ts3dLogo {
-    background-image: url('./images/TechSoft_3D_Logo_lg.png');
+    background-image: url('./images/Tech Soft 3D logo-2024.png');
     width: 314px;
     height: 50px;
   }
@@ -70,7 +70,7 @@
 
 @media screen and (min-width : 992px) {
   .ts3dLogo {
-    background-image: url('./images/TechSoft_3D_Logo_lg.png');
+    background-image: url('./images/Tech Soft 3D logo-2024.png');
     width: 314px;
     height: 50px;
   }
