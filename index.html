@@ -29,7 +29,7 @@
   <link rel="stylesheet" href="stylesheets/TS3D_logo.css" />
   <link rel="stylesheet" href="nouislider/nouislider.min.css" />
 
-
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/techsoft3d/hoops-web-viewer@2024.2.0/hoops_web_viewer.js"></script>
   <script type="text/javascript" src="javascripts/communicator_scripts/jquery-3.3.1.min.js"></script>
   <script type="text/javascript" src="javascripts/jquery-ui-1.10.3.min.js"></script>
   <script type="text/javascript" src="javascripts/jquery-ui.min.js"></script>
@@ -50,11 +50,11 @@
 
 
   <script type="module">
-    caasClient.init('https://caas.techsoft3d.com', { accessKey: "64e757dbd8ac93cc087cfab7" });
-    await loadDynamicScript()
+    // caasClient.init('https://caas.techsoft3d.com', { accessKey: "64e757dbd8ac93cc087cfab7" });
+    // await loadDynamicScript()
     await loadIndividualScript("javascripts/communicator_scripts/web_viewer_ui.js")
-    await loadIndividualScript("javascripts/communicator_scripts/communicator_server_integration.js?v=latest")
-    await loadIndividualScript("javascripts/communicator_scripts/sample.js?v=latest")
+    // await loadIndividualScript("javascripts/communicator_scripts/communicator_server_integration.js?v=latest")
+    // await loadIndividualScript("javascripts/communicator_scripts/sample.js?v=latest")
     initializeViewer()
 
   </script>
